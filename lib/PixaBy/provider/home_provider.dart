@@ -14,7 +14,6 @@ class HomeProvider extends ChangeNotifier
     notifyListeners();
   }
 
-
   Future<SearchModal?> fromMap(String img)
   async {
     final data = await helper.fetchApiData(img);

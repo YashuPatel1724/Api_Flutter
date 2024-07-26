@@ -1,4 +1,7 @@
 import 'package:api_flutter/PixaBy/provider/home_provider.dart';
+import 'package:api_flutter/Recipes%20App/provider/recipes_provider.dart';
+import 'package:api_flutter/Recipes%20App/view/screen/detail_page.dart';
+import 'package:api_flutter/Recipes%20App/view/screen/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,11 +19,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => HomeProvider(),)
+        ChangeNotifierProvider(create: (context) => HomeProvider(),),
+        ChangeNotifierProvider(create: (context) => RecipesProvider(),),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SearchPage(),
+        initialRoute: '/',
+        routes: {
+          '/' : (context) => RecipePage(),
+          '/detail' : (context) => DetailPage(),
+        },
       ),
     );
   }
