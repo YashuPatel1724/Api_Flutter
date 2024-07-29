@@ -1,5 +1,6 @@
 import 'package:api_flutter/Recipes%20App/modal/recipes_modal.dart';
 import 'package:api_flutter/Recipes%20App/provider/recipes_provider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,14 +20,30 @@ class DetailPage extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 300,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                            '${recipe!.recipes[recipesProviderTrue.selectIndex].image}'))),
+              Stack(
+                children: [
+                  Container(
+                    height: 300,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                '${recipe!.recipes[recipesProviderTrue.selectIndex].image}'))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0, left: 10),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                        child: Icon(
+                      CupertinoIcons.arrow_left,
+                      color: Colors.white,
+                      size: 30,
+                    )),
+                  )
+                ],
               ),
               SizedBox(
                 height: 15,
@@ -37,10 +54,14 @@ class DetailPage extends StatelessWidget {
                   children: [
                     Text(
                       '${recipe.recipes[recipesProviderTrue.selectIndex].name}',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
                     ),
                     Spacer(),
-                    Text('${recipe.recipes[recipesProviderTrue.selectIndex].difficulty}',style: TextStyle(fontSize: 20),)
+                    Text(
+                      '${recipe.recipes[recipesProviderTrue.selectIndex].difficulty}',
+                      style: TextStyle(fontSize: 20),
+                    )
                   ],
                 ),
               ),
@@ -99,11 +120,11 @@ class DetailPage extends StatelessWidget {
                     },
                     children: [
                       Text(
-                        '${recipe.recipes[recipesProviderTrue.selectIndex].ingredients}',
+                        '${recipe.recipes[recipesProviderTrue.selectIndex].ingredients.join(', ')}',
                         style: TextStyle(fontSize: 19, color: Colors.black87),
                       ),
                       Text(
-                          '${recipe.recipes[recipesProviderTrue.selectIndex].instructions}')
+                          '${recipe.recipes[recipesProviderTrue.selectIndex].instructions.join(', ')}')
                     ],
                   ),
                 ),
@@ -204,9 +225,18 @@ class DetailPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.shopping_cart_rounded,color: Colors.white,size: 30,),
-                      SizedBox(width: 20,),
-                      Text('Add to cart',style: TextStyle(color: Colors.white,fontSize: 25),)
+                      Icon(
+                        Icons.shopping_cart_rounded,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        'Add to cart',
+                        style: TextStyle(color: Colors.white, fontSize: 25),
+                      )
                     ],
                   ),
                 ),

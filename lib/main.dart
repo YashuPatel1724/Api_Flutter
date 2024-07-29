@@ -1,3 +1,7 @@
+import 'package:api_flutter/E-commerce/provider/e_comm_provider.dart';
+import 'package:api_flutter/E-commerce/view/screen/cart_page.dart';
+import 'package:api_flutter/E-commerce/view/screen/detailspage.dart';
+import 'package:api_flutter/E-commerce/view/screen/homepage.dart';
 import 'package:api_flutter/PixaBy/provider/home_provider.dart';
 import 'package:api_flutter/Recipes%20App/provider/recipes_provider.dart';
 import 'package:api_flutter/Recipes%20App/view/screen/detail_page.dart';
@@ -21,13 +25,21 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => HomeProvider(),),
         ChangeNotifierProvider(create: (context) => RecipesProvider(),),
+        ChangeNotifierProvider(create: (context) => ECommProvider(),),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        // initialRoute: '/',
+        // routes: {
+        //   '/' : (context) => RecipePage(),
+        //   '/detail' : (context) => DetailPage(),
+        // },
+        // home: SearchPage(),
         initialRoute: '/',
         routes: {
-          '/' : (context) => RecipePage(),
-          '/detail' : (context) => DetailPage(),
+          '/' : (context) => HomePage(),
+          '/detail' : (context) => Detailspage(),
+          '/cart' : (context) => CartPage(),
         },
       ),
     );
