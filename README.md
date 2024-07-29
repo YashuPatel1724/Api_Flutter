@@ -68,3 +68,23 @@ Our e-commerce application, built with Flutter and powered by robust APIs, offer
 <div align="center">
 <a href="https://github.com/YashuPatel1724/Api_Flutter/tree/master/lib/E-commerce">-> 📂 Go To Dart File 📂 </a>
 </div>
+
+<h1 align="center">👉 Set Wallpaper 👈</h1>
+
+<h3 align="center"> Set Wallpaper App Video </h3>
+<div align="center">
+ <video src="https://github.com/user-attachments/assets/dd04e68b-479c-4959-906d-d99f7c5b5cd1"> 
+</video>
+</div>
+
+<h3 align="center">👉 Set Wallpaper Images 👈</h3>
+
+<div align="center">
+  <img height="550"  src="https://github.com/user-attachments/assets/f4865f77-1287-4535-ad4c-94b4d4af244b" />
+  <img height="550"  src="https://github.com/user-attachments/assets/e4c9e085-ccea-4669-a78c-f537a6005972" />
+ <img height="550"  src="https://github.com/user-attachments/assets/09b35e63-2de1-4d64-bef0-8391c797789d" />
+</div>
+<div align="center">
+<a href="https://github.com/YashuPatel1724/Api_Flutter/tree/master/lib/E-commerce">-> 📂 Go To Dart File 📂 </a>
+</div>
+
