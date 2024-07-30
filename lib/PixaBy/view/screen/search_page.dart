@@ -44,17 +44,23 @@ class SearchPage extends StatelessWidget {
             return GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                 itemCount: search!.hits.length,
-                itemBuilder: (context, index) => Container(
-                      margin: EdgeInsets.all(10),
-                      height: 200,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  '${search.hits[index].webformatURL}'))),
-                    ));
+                itemBuilder: (context, index) => GestureDetector(
+                  onTap: () {
+                    homeProvider.selectedIndex(index);
+                    Navigator.of(context).pushNamed('/detail');
+                  },
+                  child: Container(
+                        margin: EdgeInsets.all(10),
+                        height: 200,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    '${search.hits[index].webformatURL}'))),
+                      ),
+                ));
           } else {
             return Center(
               child: CircularProgressIndicator(),

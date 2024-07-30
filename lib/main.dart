@@ -9,6 +9,7 @@ import 'package:api_flutter/Recipes%20App/view/screen/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'PixaBy/view/screen/detiails_page.dart';
 import 'PixaBy/view/screen/search_page.dart';
 
 void main()
@@ -37,9 +38,8 @@ class MyApp extends StatelessWidget {
         // home: SearchPage(),
         initialRoute: '/',
         routes: {
-          '/' : (context) => HomePage(),
-          '/detail' : (context) => Detailspage(),
-          '/cart' : (context) => CartPage(),
+          '/' : (context) => SearchPage(),
+          '/detail' : (context) => Detiail_Page(),
         },
       ),
     );
